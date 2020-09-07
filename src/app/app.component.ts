@@ -6,5 +6,13 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  name:string="Amazon";
+  isAdded:boolean=false;
+  recentItem:string;
+  display($event)
+  {
+     this.recentItem=$event
+     this.isAdded=true;
+  }
+
 }

@@ -1,4 +1,4 @@
-<h2>Products List</h2>
+<h2>Products List-{{companyName}}</h2>
 <table>
   <tr>
     <th>Product Name</th>
@@ -11,9 +11,9 @@
 </table>
 <br>
 <div>
-<label for="product">Enter Product Name</label>
+<label for="product" class="newProd">Enter Product Name</label>
   <input type="search" #f1>
-  <label for="quantity">Enter Quantity </label>
+  <label for="quantity" class="newProd">Enter Quantity </label>
   <input type="search" #f2>
-  <button type="submit" (click)="submit(f1,f2)">Add Product</button>
+  <button type="submit" (click)="submit(f1,f2)" class="button" >Add Product</button>
 </div>

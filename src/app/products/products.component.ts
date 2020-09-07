@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent  {
 
-  constructor() { }
+@Input('companyName') companyName:string;
+@Output() recentlyAdded = new EventEmitter<string>();
+item:string;
 
-  ngOnInit() {
-  }
   products=[{name:'Moto G5',quantity:'2'},
             {name:'Raycold Geyser',quantity:'3'},
-            {name:'Dell Inspiron Laptop',quantity:'1'}
+            
   ]
 
  
@@ -22,6 +22,8 @@ export class ProductsComponent implements OnInit {
     
   
    this.products.push({name:f1.value,quantity:f2.value})
+   this.item=f1.value+" , "+f2.value
+   this.recentlyAdded.emit(this.item)
   }
 
 }
